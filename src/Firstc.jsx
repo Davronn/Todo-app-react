@@ -70,7 +70,7 @@ const Firscomp = () => {
           onChange={(e) => setNewTodo(e.target.value)}
         />
         <div className="input-group-append">
-          <button className="btn btn-primary" onClick={handleAddTodo}>
+          <button className="btn btn-success" onClick={handleAddTodo}>
             Add Todo
           </button>
         </div>
