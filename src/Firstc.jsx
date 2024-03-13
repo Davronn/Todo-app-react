@@ -54,6 +54,7 @@ const Firscomp = () => {
       .catch((error) => {
         console.log(error);
       });
+     
   };
 
   return (
@@ -61,10 +62,11 @@ const Firscomp = () => {
       <h1>Todo List</h1>
       <div className="input-group mb-3">
         <input
+          id="inputt"
           type="text"
           className="form-control"
           placeholder="Enter new todo"
-          value={newTodo}
+         
           onChange={(e) => setNewTodo(e.target.value)}
         />
         <div className="input-group-append">
@@ -99,20 +101,24 @@ const Firscomp = () => {
               </>
             ) : (
               <>
-                {todo.title}
-                <div className="float-right">
-                  <button
-                    className="btn btn-warning mr-2"
-                    onClick={() => handleEdit(todo.id, todo.title)}
-                  >
-                    Edit
-                  </button>
-                  <button
-                    className="btn btn-danger"
-                    onClick={() => handleDelete(todo.id)}
-                  >
-                    Delete
-                  </button>
+                <div className="infoo d-flex justify-content: between">
+                  <span className="me-auto">{todo.title}</span>
+                  <div className="d-flex">
+                    <div className="btns">
+                      <button
+                        className="btn btn-warning mr-2"
+                        onClick={() => handleEdit(todo.id, todo.title)}
+                      >
+                        Edit
+                      </button>
+                      <button
+                        className="btn btn-danger ms-2"
+                        onClick={() => handleDelete(todo.id)}
+                      >
+                        Delete
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </>
             )}
